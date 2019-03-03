@@ -8,10 +8,18 @@ this section will list advantages and reasons to use it
 - Bulleted
 - List
 
-## Different Technologies
-- Protobuf
-- gRPC
-- etc
+## Languages
+grPC is compatable with:
+- C++
+- C#
+- Dart
+- Go
+- Java
+- Node.js
+- Objective-C
+- PHP
+- Python
+- Ruby
 
 ## Installation
 where to get it and where to install it
