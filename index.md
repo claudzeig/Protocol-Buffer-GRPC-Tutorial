@@ -8,6 +8,11 @@ this section will list advantages and reasons to use it
 - Bulleted
 - List
 
+## Different Technologies
+- Protobuf
+- gRPC
+- etc
+
 ## Installation
 where to get it and where to install it
 Steps
