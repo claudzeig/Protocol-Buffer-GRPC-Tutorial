@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+# Protocol Buffer GRPC Tutorial
 
-You can use the [editor on GitHub](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## What is it?
+this secion will talk about what it is
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
+## Why use it?
+this section will list advantages and reasons to use it
 - Bulleted
 - List
 
+## Installation
+where to get it and where to install it
+Steps
+1. Numbered
+2. List
+`some coding`
+
+## Getting Started Tutorial
+setting up your first Protocol Buffer GRPC
+Steps
 1. Numbered
 2. List
 
-**Bold** and _Italic_ and `Code` text
+`some coding`
 
-[Link](url) and ![Image](src)
-```
+### References
+[Link](url)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
