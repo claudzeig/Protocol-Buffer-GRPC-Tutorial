@@ -1,12 +1,14 @@
 # Protocol Buffer GRPC Tutorial
 
 ## What is it?
-this secion will talk about what it is
+A GRPC is where client application makes calles to a server application to enact a service or retrieve desired data. A GRPC defines services, methods, parameters, and return data. So your own application would call the GRPC client application, that would hit its server application, and return the desired result to your own application.
 
 ## Why use it?
-this section will list advantages and reasons to use it
-- Bulleted
-- List
+GRPC is used to handle multiple languages, and use and develop distributed services. By creating seperated, well defined services that can handle multiple languages, your application is more flexible, and scalable going in to the future.
+### Advantages
+- List advantages here
+### Disadvantages
+- List disadvantages here
 
 ## Languages
 grPC is compatable with:
@@ -20,6 +22,7 @@ grPC is compatable with:
 - PHP
 - Python
 - Ruby
+Note: Less used languages do not have as well documented GRPC.
 
 ## Installation
 where to get it and where to install it
