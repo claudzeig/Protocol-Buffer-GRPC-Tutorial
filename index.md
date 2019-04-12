@@ -12,39 +12,39 @@ GRPC is used to handle multiple languages, and use and develop distributed servi
 
 ## Languages
 grPC is compatable with:
--- C++
--- C#
--- Dart
--- Go
--- Java
--- Node.js
--- Objective-C
--- PHP
--- Python
--- Ruby
-
-- Note: Less used languages do not have as well documented GRPC.
+- C++
+- C#
+- Dart
+- Go
+- Java
+- Node.js
+- Objective-C
+- PHP
+- Python
+- Ruby
+#### Note: Less used languages do not have as well documented GRPC.
 
 ## Installation
 -- C++
-`# Copyright 2018 gRPC authors.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-# cmake build file for C++ helloworld example.
-# Assumes protobuf and gRPC have been installed using cmake.
-# See cmake_externalproject/CMakeLists.txt for all-in-one cmake build
-# that automatically builds all the dependencies before building helloworld.
+```c++
+ Copyright 2018 gRPC authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+cmake build file for C++ helloworld example.
+Assumes protobuf and gRPC have been installed using cmake.
+See cmake_externalproject/CMakeLists.txt for all-in-one cmake build
+that automatically builds all the dependencies before building helloworld.
 
 cmake_minimum_required(VERSION 2.8)
 
@@ -138,27 +138,46 @@ foreach(_target
   target_link_libraries(${_target}
     ${_GRPC_GRPCPP_UNSECURE}
     ${_PROTOBUF_LIBPROTOBUF})
-endforeach()`
+endforeach()
+```
 -- C#
-``
+```c#
+c
+```
 -- Dart
-``
+```dart
+d
+```
 -- Go
-``
+```go
+g
+```
 -- Java
-``
+```java
+j
+```
 -- Node.js
-``
+```javascript
+n
+```
 -- Objective-C
-``
+```objective-c
+o
+```
 -- PHP
-``
+```php
+p
+```
 -- Python
-`python -m pip install grpcio
-python -m pip install grpcio-tools`
+```python
+python -m pip install grpcio
+python -m pip install grpcio-tools
+```
 -- Ruby
-`gem install grpc
-gem install grpc-tools`
+```ruby
+gem install grpc
+gem install grpc-tools
+```
 
 ## Getting Started Tutorial
 setting up your first Protocol Buffer GRPC
