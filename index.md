@@ -4,7 +4,7 @@
 gRPC is a RPC platform developed by Google. The letters “gRPC” are a recursive acronym which means, gRPC Remote Procedure Call. In gRPC, a client application makes calles to a server application to enact a service or retrieve desired data. A gRPC defines services, methods, parameters, and return data. So your own application would call the GRPC client application, that would hit its server application, and return the desired result to your own application.
 
 ## Why use it?
-gRPC is used to handle multiple languages, and use and develop distributed services. By creating seperated, well defined services that can handle multiple languages, your application is more flexible, and scalable going in to the future.
+gRPC is used to handle multiple languages, and use and develop distributed services. By creating seperated, well defined services that can handle multiple languages, your application is more flexible, and scalable going in to the future. For example, you can easily create a gRPC server in Java with clients in Go, Python, or Ruby.
 ### Advantages
 - List advantages here
 ### Disadvantages
