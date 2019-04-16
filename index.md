@@ -155,9 +155,70 @@ d
 g
 ```
 -- Java
-```java
-j
+To use gPRC in Java, first you need to [setup the protobuf environemnt and obtain the protocol buffer complier] (https://github.com/protocolbuffers/protobuf/tree/master/java). After that, for Maven users, add the gRPC dependencies in `pom.xml`
+```xml
+<project>
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-protobuf</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+    ...
+  </dependencies>
+  ...
+</project>
 ```
+Then add the plugin:
+```xml
+<project>
+  ...
+  <dependencies>
+    ...
+  </dependencies>
+  <build>
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>1.5.0.Final</version>
+      </extension>
+    </extensions>
+    <plugins>
+      <plugin>
+        <groupId>org.xolstice.maven.plugins</groupId>
+        <artifactId>protobuf-maven-plugin</artifactId>
+        <version>0.5.0</version>
+        <configuration>
+          <protocArtifact>com.google.protobuf:protoc:3.4.0:exe:${os.detected.classifier}</protocArtifact>
+          <pluginId>grpc-java</pluginId>
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.7.0:exe:${os.detected.classifier}</pluginArtifact>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>compile-custom</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+This plugin will first detect the operating system and hardware architecture you are building the application from. Then, using this information, to download the right platform-specific binary that will be able to convert the proto file into Java code
 -- Node.js
 ```javascript
 n
@@ -195,6 +256,8 @@ Steps
 [Intro to gRPC](https://container-solutions.com/introduction-to-grpc/)
 
 [Protocol Buffer Guide](https://developers.google.com/protocol-buffers/docs/overview)
+
+https://codelabs.developers.google.com/codelabs/cloud-grpc-java/index.html?index=..%2F..index#2
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
