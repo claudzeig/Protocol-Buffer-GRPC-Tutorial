@@ -219,6 +219,7 @@ Then add the plugin:
 </project>
 ```
 This plugin will first detect the operating system and hardware architecture you are building the application from. Then, using this information, to download the right platform-specific binary that will be able to convert the proto file into Java code
+
 -- Node.js
 ```javascript
 n
