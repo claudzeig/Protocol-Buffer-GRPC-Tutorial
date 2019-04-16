@@ -154,7 +154,9 @@ d
 ```go
 g
 ```
+
 -- Java
+
 To use gPRC in Java, first you need to 
 [setup the protobuf environemnt and obtain the protocol buffer complier](https://github.com/protocolbuffers/protobuf/tree/master/java).
 
