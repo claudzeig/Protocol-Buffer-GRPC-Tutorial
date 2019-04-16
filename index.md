@@ -11,10 +11,6 @@ Protocol buffers are a flexible, efficient, automated mechanism for serializing 
 
 ## Why use it?
 gRPC is used to handle multiple languages, and use and develop distributed services. By creating seperated, well defined services that can handle multiple languages, your application is more flexible, and scalable going in to the future. With gRPC we can define our service once in a .proto file and implement clients and servers in any of gRPC’s supported languages, which in turn can be run in environments ranging from servers inside Google to your own tablet - all the complexity of communication between different languages and environments is handled for you by gRPC (For example, you can easily create a gRPC server in Java with clients in Go, Python, or Ruby). We also get all the advantages of working with protocol buffers, including efficient serialization, a simple IDL, and easy interface updating.
-### Advantages
-- List advantages here
-### Disadvantages
-- List disadvantages here
 
 ## Languages
 grPC is compatable with:
