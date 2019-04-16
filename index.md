@@ -194,6 +194,10 @@ Steps
 `some coding`
 
 ### References
-[Link](url)
+[gRPC Documentation](https://grpc.io/docs/)
+
+[Intro to gRPC](https://container-solutions.com/introduction-to-grpc/)
+
+[Protocol Buffer Guide](https://developers.google.com/protocol-buffers/docs/overview)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
