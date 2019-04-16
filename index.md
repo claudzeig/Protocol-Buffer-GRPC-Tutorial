@@ -1,10 +1,10 @@
 # Protocol Buffer GRPC Tutorial
 
 ## What is it?
-A GRPC is where client application makes calles to a server application to enact a service or retrieve desired data. A GRPC defines services, methods, parameters, and return data. So your own application would call the GRPC client application, that would hit its server application, and return the desired result to your own application.
+gRPC is a RPC platform developed by Google. The letters “gRPC” are a recursive acronym which means, gRPC Remote Procedure Call. In gRPC, a client application makes calles to a server application to enact a service or retrieve desired data. A gRPC defines services, methods, parameters, and return data. So your own application would call the GRPC client application, that would hit its server application, and return the desired result to your own application.
 
 ## Why use it?
-GRPC is used to handle multiple languages, and use and develop distributed services. By creating seperated, well defined services that can handle multiple languages, your application is more flexible, and scalable going in to the future.
+gRPC is used to handle multiple languages, and use and develop distributed services. By creating seperated, well defined services that can handle multiple languages, your application is more flexible, and scalable going in to the future.
 ### Advantages
 - List advantages here
 ### Disadvantages
