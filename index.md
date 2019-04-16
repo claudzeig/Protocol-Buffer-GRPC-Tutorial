@@ -292,12 +292,26 @@ gem install grpc-tools
 ```
 
 ## Getting Started Tutorial
-setting up your first Protocol Buffer GRPC
-Steps
-1. Numbered
-2. List
+There is a simple turtorial to implement a greeting service with Java.
+you will learn:
 
-`some coding`
+- The Protocol Buffer Language
+- How to implement a gRPC service using Java
+- How to implement a gRPC client using Java
+
+#### Create a gRPC Service:
+create a new project with Maven:
+```
+$ mvn archetype:generate -DgroupId=com.example.grpc \
+ -DartifactId=grpc-hello-server \
+ -DarchetypeArtifactId=maven-archetype-quickstart \
+ -DinteractiveMode=false
+ ```
+ 
+ direct to the project folder
+ `$ cd grpc-hello-server`
+ 
+ 
 
 ### References
 [gRPC Documentation](https://grpc.io/docs/)
@@ -306,10 +320,8 @@ Steps
 
 [Protocol Buffer Guide](https://developers.google.com/protocol-buffers/docs/overview)
 
-https://codelabs.developers.google.com/codelabs/cloud-grpc-java/index.html?index=..%2F..index#2
-
 https://github.com/grpc/grpc-java
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-##Thank you for visiting our tutorial!
+## Thank you for visiting our tutorial!
