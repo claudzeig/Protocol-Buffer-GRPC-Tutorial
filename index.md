@@ -1,7 +1,13 @@
-# Protocol Buffer GRPC Tutorial
+# Protocol Buffer gRPC Tutorial
 
 ## What is it?
-gRPC is a RPC platform developed by Google. The letters “gRPC” are a recursive acronym which means, gRPC Remote Procedure Call. In gRPC, a client application makes calles to a server application to enact a service or retrieve desired data. A gRPC defines services, methods, parameters, and return data. So your own application would call the GRPC client application, that would hit its server application, and return the desired result to your own application.
+gRPC is a RPC platform developed by Google. The letters “gRPC” are a recursive acronym which means, gRPC Remote Procedure Call. In gRPC, a client application makes calles to a server application to enact a service or retrieve desired data. A gRPC defines services, methods, parameters, and return data. So your own application would call the gRPC client application, that would hit its server application, and return the desired result to your own application.
+
+### Protocol Buffer
+Protocol buffers are a flexible, efficient, automated mechanism for serializing structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages. Here's a quick intro of how it works.
+[Protocol Buffer](https://developers.google.com/protocol-buffers/docs/overview)
+
+
 
 ## Why use it?
 gRPC is used to handle multiple languages, and use and develop distributed services. By creating seperated, well defined services that can handle multiple languages, your application is more flexible, and scalable going in to the future. For example, you can easily create a gRPC server in Java with clients in Go, Python, or Ruby.
