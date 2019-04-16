@@ -155,7 +155,9 @@ d
 g
 ```
 -- Java
-To use gPRC in Java, first you need to [setup the protobuf environemnt and obtain the protocol buffer complier] (https://github.com/protocolbuffers/protobuf/tree/master/java). After that, for Maven users, add the gRPC dependencies in `pom.xml`
+To use gPRC in Java, first you need to [setup the protobuf environemnt and obtain the protocol buffer complier] (https://github.com/protocolbuffers/protobuf/tree/master/java).
+
+For Maven users, add the gRPC dependencies in `pom.xml`
 ```xml
 <project>
   ...
@@ -218,7 +220,50 @@ Then add the plugin:
   </build>
 </project>
 ```
-This plugin will first detect the operating system and hardware architecture you are building the application from. Then, using this information, to download the right platform-specific binary that will be able to convert the proto file into Java code
+This plugin will first detect the operating system and hardware architecture you are building the application from. Then, using this information, to download the right platform-specific binary that will be able to convert the proto file into Java code.
+
+For Gradle and non-Android, add to dependency in build.gradle
+```java
+compile 'io.grpc:grpc-netty-shaded:1.20.0'
+compile 'io.grpc:grpc-protobuf:1.20.0'
+compile 'io.grpc:grpc-stub:1.20.0'
+```
+For Android client:
+```java
+compile 'io.grpc:grpc-okhttp:1.20.0'
+compile 'io.grpc:grpc-protobuf-lite:1.20.0'
+compile 'io.grpc:grpc-stub:1.20.0
+```
+For protobuf-based codegen integrated with the Gradle build system, you can use protobuf-gradle-plugin:
+```java
+apply plugin: 'com.google.protobuf'
+
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+  }
+}
+
+protobuf {
+  protoc {
+    artifact = "com.google.protobuf:protoc:3.7.1"
+  }
+  plugins {
+    grpc {
+      artifact = 'io.grpc:protoc-gen-grpc-java:1.20.0'
+    }
+  }
+  generateProtoTasks {
+    all()*.plugins {
+      grpc {}
+    }
+  }
+}
+```
+
 
 -- Node.js
 ```javascript
