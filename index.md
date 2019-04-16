@@ -155,7 +155,8 @@ d
 g
 ```
 -- Java
-To use gPRC in Java, first you need to [setup the protobuf environemnt and obtain the protocol buffer complier] (https://github.com/protocolbuffers/protobuf/tree/master/java).
+To use gPRC in Java, first you need to 
+[setup the protobuf environemnt and obtain the protocol buffer complier] (https://github.com/protocolbuffers/protobuf/tree/master/java).
 
 For Maven users, add the gRPC dependencies in `pom.xml`
 ```xml
