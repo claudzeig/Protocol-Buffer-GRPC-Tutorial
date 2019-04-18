@@ -342,7 +342,8 @@ You are finished!
  $ cd example/helloworld
  ```
  ### Run the gRPC example
- 1.run the server
+ 
+ 1. run the server
  ```
  $python greeter_server.py
  ```
