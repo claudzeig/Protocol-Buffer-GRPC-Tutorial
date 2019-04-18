@@ -142,18 +142,6 @@ foreach(_target
     ${_PROTOBUF_LIBPROTOBUF})
 endforeach()
 ```
--- C#
-```c#
-c
-```
--- Dart
-```dart
-d
-```
--- Go
-```go
-g
-```
 
 -- Java
 
@@ -267,19 +255,6 @@ protobuf {
 }
 ```
 
-
--- Node.js
-```javascript
-n
-```
--- Objective-C
-```objective-c
-o
-```
--- PHP
-```php
-p
-```
 -- Python
 ```python
 python -m pip install grpcio
@@ -291,8 +266,10 @@ gem install grpc
 gem install grpc-tools
 ```
 
+For other languages, please check this documentation https://grpc.io/docs/
+
 ## Getting Started Tutorial
-There is a simple turtorial to implement a greeting service with Java.
+There is a simple turtorial to implement a streaming service with Java.
 you will learn:
 
 - The Protocol Buffer Language
@@ -307,10 +284,165 @@ $ mvn archetype:generate -DgroupId=com.example.grpc \
  -DarchetypeArtifactId=maven-archetype-quickstart \
  -DinteractiveMode=false
  ```
- 
  direct to the project folder
  `$ cd grpc-hello-server`
  
+ ###### add a gPRC definition file
+In gRPC, service payloads (request and response) and the service operations need to be captured in an IDL (Interface Definition Language). gRPC uses Protobuffer 3 syntax to define message payloads and operations.
+ 
+ Create a new proto directory `mkdir -p src/main/proto`
+ 
+ Then direct to folder `proto` and under this folder, create a new proto file `GreetingService.proto`
+ edit the file Here we add `stream` key word to the response parameter
+ 
+ ```
+syntax = "proto3";
+package com.example.grpc;
+
+// Request payload
+message HelloRequest {
+  // Each message attribute is strongly typed.
+  // You also must assign a "tag" number.
+  // Each tag number is unique within the message.
+  string name = 1;
+
+  // This defines a strongly typed list of String
+  repeated string hobbies = 2;
+
+  // There are many more basics types, like Enum, Map
+  // See https://developers.google.com/protocol-buffers/docs/proto3
+  // for more information.
+}
+
+message HelloResponse {
+  string greeting = 1;
+}
+
+// Defining a Service, a Service can have multiple RPC operations
+service GreetingService {
+  // Define a RPC operation
+  rpc greeting(HelloRequest) returns (stream HelloResponse);
+}
+ ```
+Then follow the insturction in the Java installation section to add dependencies and plugins.
+###### Generate the Stubs
+When you build the application, the plugin will convert the proto definitions into Java code.
+`mvn -DskipTests package`
+To see the generated files:
+`find target/generated-sources`
+###### Implement the Service
+ create a new `GreetingServiceImpl` class
+ src/main/java/com/example/grpc/GreetingServiceImpl.java
+ ```java
+ package com.example.grpc;
+
+import io.grpc.stub.StreamObserver;
+
+public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImplBase {
+  @Override
+  public void greeting(GreetingServiceOuterClass.HelloRequest request,
+        StreamObserver<GreetingServiceOuterClass.HelloResponse> responseObserver) {
+  // HelloRequest has toString auto-generated.
+    System.out.println(request);
+
+    // You must use a builder to construct a new Protobuffer object
+    GreetingServiceOuterClass.HelloResponse response = GreetingServiceOuterClass.HelloResponse.newBuilder()
+      .setGreeting("Hello there, " + request.getName())
+      .build();
+
+    // Use responseObserver to send multiple responses back
+    responseObserver.onNext(response); 
+    responseObserver.onNext(response);
+    responseObserver.onNext(response);
+
+    // When you are done, you must call onCompleted.
+    responseObserver.onCompleted();
+  }
+}
+ ```
+###### Implement the Server
+
+Finally, you'll need to start a server to listen on a port and register this service implementation. Edit the `App` class and it's main method:
+
+src/main/java/com/example/grpc/App.java 
+```java
+package com.example.grpc;
+
+import io.grpc.*;
+
+public class App
+{
+    public static void main( String[] args ) throws Exception
+    {
+      // Create a new server to listen on port 8080
+      Server server = ServerBuilder.forPort(8080)
+        .addService(new GreetingServiceImpl())
+        .build();
+
+      // Start the server
+      server.start();
+
+      // Server threads are running in the background.
+      System.out.println("Server started");
+      // Don't exit the main thread. Wait until server is terminated.
+      server.awaitTermination();
+    }
+}
+```
+run the server:
+`mvn -DskipTests package exec:java -Dexec.mainClass=com.example.grpc.App`
+
+
+ #### Consuming the Service
+For simplicity, add a new `Client` class with a new main method to current project.
+src/main/java/com/example/grpc/Client.java
+```java
+package com.example.grpc;
+
+
+import io.grpc.*;
+
+// New import
+import io.grpc.stub.*;
+
+public class Client
+{
+    public static void main( String[] args ) throws Exception
+    {
+      final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8080")
+        .usePlaintext(true)
+        .build();
+
+      // Replace the previous synchronous code with asynchronous code.
+      // This time use an async stub:
+       GreetingServiceGrpc.GreetingServiceStub stub = GreetingServiceGrpc.newStub(channel);
+
+      // Construct a request
+      GreetingServiceOuterClass.HelloRequest request =
+        GreetingServiceOuterClass.HelloRequest.newBuilder()
+          .setName("Buckeye")
+          .build();
+
+      // Make an Asynchronous call. Listen to responses w/ StreamObserver
+      stub.greeting(request, new StreamObserver<GreetingServiceOuterClass.HelloResponse>() {
+        public void onNext(GreetingServiceOuterClass.HelloResponse response) {
+          System.out.println(response);
+        }
+        public void onError(Throwable t) {
+        }
+        public void onCompleted() {
+          // Typically you'll shutdown the channel somewhere else.
+          // But for the purpose of the lab, we are only making a single
+          // request. We'll shutdown as soon as this request is done.
+          channel.shutdownNow();
+        }
+      });
+    }
+}
+```
+Run the client:
+
+`mvn -DskipTests package exec:java -Dexec.mainClass=com.example.grpc.Client`
  
 
 ### References
