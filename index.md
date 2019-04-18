@@ -332,8 +332,8 @@ Run the client:
 
 `mvn -DskipTests package exec:java -Dexec.mainClass=com.example.grpc.Client`
 
-![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Client.PNG "result")
-![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Server2.PNG "result")
+![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Client.png)
+![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Server2.png)
 
 You are finished!
  
