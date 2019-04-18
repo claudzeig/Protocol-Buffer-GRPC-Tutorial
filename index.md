@@ -341,7 +341,8 @@ You are finished!
  ```
  $ cd example/helloworld
  ```
- ### Run the gRPC example
+ 
+ ### Run the gRPC Example 
  
  1. run the server
  ```
