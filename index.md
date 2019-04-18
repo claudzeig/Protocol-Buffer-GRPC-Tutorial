@@ -152,10 +152,10 @@ For other languages, please check this documentation https://grpc.io/docs/
 There are two different tutorials. The first is with Python, and you can find an easy implementation with commenting. Just clone/fork off the repository and get started. The second is a step by step tutorial using Maven and Java.
 
 --Python
-Repository Name -> ()
+---Repository Name -> ()
 
 --Java
-There is a simple tutorial to implement a streaming service with Java.
+---Here is a simple tutorial to implement a streaming service with Java.
 you will learn:
 
 - The Protocol Buffer Language
