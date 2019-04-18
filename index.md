@@ -336,7 +336,23 @@ Run the client:
 ![Server Image](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Server2.PNG)
 
 You are finished!
- 
+## Simple example in python
+ There is a simple example to implement a greeting service in python.
+ You can download the file in the [example](https://github.com/tongruihan/Protocol-Buffer-GRPC-Tutorial/tree/master/example)
+ To run the service, first you should make sure you already install grpc and grpc tool as it mentioned before.
+ Then Go to the helloworld directory
+ ```
+ $ cd example/helloworld
+ ```
+ ### Run the gRPC example
+ 1.run the server
+ ```
+ $python greeter_server.py
+ ```
+ 2. run the client
+ ```
+ $python greeter_client.py
+ ```  
 
 ### References
 [gRPC Documentation](https://grpc.io/docs/)
