@@ -392,6 +392,8 @@ public class App
 run the server:
 `mvn -DskipTests package exec:java -Dexec.mainClass=com.example.grpc.App`
 
+![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Server.PNG "result")
+
 
  #### Consuming the Service
 For simplicity, add a new `Client` class with a new main method to current project.
@@ -443,6 +445,11 @@ public class Client
 Run the client:
 
 `mvn -DskipTests package exec:java -Dexec.mainClass=com.example.grpc.Client`
+
+![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Client.PNG "result")
+![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Server2.PNG "result")
+
+You are finished!
  
 
 ### References
