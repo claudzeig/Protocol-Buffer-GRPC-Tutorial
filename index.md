@@ -332,8 +332,8 @@ Run the client:
 
 `mvn -DskipTests package exec:java -Dexec.mainClass=com.example.grpc.Client`
 
-![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Client.png)
-![alt text](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Server2.png)
+![Client Image](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Client.PNG)
+![Server Image](https://github.com/claudzeig/Protocol-Buffer-GRPC-Tutorial/blob/master/Server2.PNG)
 
 You are finished!
  
@@ -346,7 +346,5 @@ You are finished!
 [Protocol Buffer Guide](https://developers.google.com/protocol-buffers/docs/overview)
 
 https://github.com/grpc/grpc-java
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ## Thank you for visiting our tutorial!
